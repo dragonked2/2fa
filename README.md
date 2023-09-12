@@ -1,4 +1,4 @@
-#My Methology to Bypass 2FA #AliElTop
+#My Methodology to Bypass 2FA #AliElTop
 1. Path Traversal Exploitation
 
     Real-World Example: Imagine a hacker wants to buy a high-end gadget on an e-commerce site. Instead of going through the regular checkout process, they manipulate the website's URL directly to access the payment confirmation page. By doing this, they skip the 2FA requirement and successfully make the purchase without authenticating.
