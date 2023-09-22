@@ -77,3 +77,67 @@
 20. Backup Code Conundrum
 
     Real-World Example: An attacker discovered a vulnerability in a cloud storage service. Through CORS misconfigurations, they were able to access backup codes from the response of the backup code endpoint. With stolen backup codes and knowledge of a user's username and password, the attacker bypassed 2FA.
+
+
+2FA Bypass Techniques: 🍀🔥 👁️‍🗨️
+
+    Response Manipulation
+        When "success":false is detected in the response, modify it to "success":true to bypass authentication.
+
+    Status Code Manipulation
+        If a 4xx status code is encountered, attempt to change it to a 200 OK status to evade access restrictions.
+
+    2FA Code Leakage in Response
+        Scrutinize the response of the 2FA Code Triggering Request for any inadvertent leakage of the code.
+
+    JS File Analysis
+        Occasionally, inspect JavaScript files for possible hints or information regarding the 2FA code.
+
+    2FA Code Reusability
+        Exploit the reusability of the same 2FA code for multiple authentication attempts.
+
+    Lack of Brute-Force Protection
+        In cases where brute-force protection is absent, attempt to brute-force any length of 2FA code.
+
+    Missing 2FA Code Integrity Validation
+        Exploit the lack of validation for 2FA code integrity, allowing any user's code to be used for bypassing 2FA.
+
+    CSRF on 2FA Disabling
+        Take advantage of the absence of CSRF protection on the 2FA disabling process, especially if there's no authentication confirmation.
+
+    Password Reset Disable 2FA
+        Exploit the vulnerability where 2FA gets disabled upon changing the password or email address.
+
+    Backup Code Abuse
+        Bypass 2FA by exploiting the Backup code feature, removing/resetting 2FA restrictions.
+
+    Clickjacking on 2FA Disabling Page
+        Iframe the 2FA Disabling page and employ social engineering tactics to convince victims to disable 2FA.
+
+    Session Hijacking with Timeout Vulnerability
+        If the session is already hijacked and there is a session timeout vulnerability, exploit it to bypass 2FA.
+
+    Bypass 2FA with Null or 000000
+        Enter the code "000000" or "null" to attempt 2FA protection bypass. Steps:
+            Enter “null” in 2FA code.
+            Enter 000000 in 2FA code.
+            Send an empty code (as found in Grammarly).
+            Open a new tab in the same browser and check if other API endpoints are accessible without entering 2FA.
+
+    Google Authenticator Bypass
+        Steps:
+            Set up Google Authenticator for 2FA.
+            Enable 2FA.
+            Visit the password reset page and change your password.
+            If the website redirects you to your dashboard without requiring Google Authenticator, the 2FA is bypassed.
+
+    Bypassing OTP in Registration Forms
+        Use repeater techniques to submit the registration form multiple times and obtain the OTP.
+        Steps:
+            Create an account with a non-existing phone number.
+            Intercept the request in BurpSuite.
+            Send the request to the repeater and forward.
+            Modify the non-existent phone number to your phone number in the Repeater tab.
+            If you receive an OTP on your phone, use it to register the non-existent number.
+
+These techniques are presented for educational purposes and should only be used in authorized security testing or ethical hacking scenarios. Unauthorized use can lead to legal consequences.
